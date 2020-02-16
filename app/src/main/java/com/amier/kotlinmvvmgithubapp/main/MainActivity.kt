@@ -1,7 +1,8 @@
-package com.amier.kotlinmvvmgithubapp
+package com.amier.kotlinmvvmgithubapp.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.amier.kotlinmvvmgithubapp.R
 
 class MainActivity : AppCompatActivity() {
 

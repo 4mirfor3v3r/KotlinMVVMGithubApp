@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.amier.kotlinmvvmgithubapp.data.source.MainDataRepository
 import com.amier.kotlinmvvmgithubapp.main.MainViewModel
+import com.amier.kotlinmvvmgithubapp.repo.RepoViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory private constructor(
@@ -16,7 +17,10 @@ class ViewModelFactory private constructor(
     override fun <T : ViewModel?> create(modelClass: Class<T>)= with(modelClass) {
         when {
             isAssignableFrom(MainViewModel::class.java) -> MainViewModel(application, mainDataRepository)
-//            isAssignableFrom(RepoViewModel::class.java) -> RepoViewModel(application, mainDataRepository)
+            isAssignableFrom(RepoViewModel::class.java) -> RepoViewModel(
+                application,
+                mainDataRepository
+            )
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
     }as T

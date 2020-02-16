@@ -1,10 +1,11 @@
 package com.amier.kotlinmvvmgithubapp.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.amier.kotlinmvvmgithubapp.R
+import com.amier.kotlinmvvmgithubapp.repo.RepoActivity
 import com.amier.kotlinmvvmgithubapp.util.obtainViewModel
 import com.amier.kotlinmvvmgithubapp.util.replaceFragmentInActivity
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         viewModel = obtainViewModel().apply{
             openRepo.observe(this@MainActivity, Observer {
-//                startActivity(Intent(mActivity,RepoActivity::class.java))
+                startActivity(Intent(mActivity, RepoActivity::class.java))
             })
         }
     }

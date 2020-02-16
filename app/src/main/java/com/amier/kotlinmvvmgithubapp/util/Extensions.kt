@@ -26,7 +26,8 @@ private inline fun FragmentManager.transact(action:
 }
 
 fun <T:ViewModel> AppCompatActivity.obtainViewModel(viewModelClass: Class<T>) =
-    ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(viewModelClass)
+    ViewModelProvider(this,ViewModelFactory.getInstance(application)).get(viewModelClass)
+//    ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(viewModelClass)
 
 fun AppCompatActivity.addFragmentToActivity(fragment: Fragment,tag:String){
     supportFragmentManager.transact {

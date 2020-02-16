@@ -10,11 +10,9 @@ class MainDataRepository(val remoteDataSource:MainDataSource, val localDataSourc
             override fun onDataLoaded(mainData: MainData?) {
                 callback.onDataLoaded(mainData)
             }
-
             override fun onNotAvailable() {
                 callback.onNotAvailable()
             }
-
             override fun onError(msg: String?) {
                 callback.onError(msg)
             }
@@ -26,11 +24,9 @@ class MainDataRepository(val remoteDataSource:MainDataSource, val localDataSourc
             override fun onDataLoaded(repoData: MutableList<RepoData?>) {
                 callback.onDataLoaded(repoData)
             }
-
             override fun onNotAvailable() {
                 callback.onNotAvailable()
             }
-
             override fun onError(msg: String?) {
                 callback.onError(msg)
             }

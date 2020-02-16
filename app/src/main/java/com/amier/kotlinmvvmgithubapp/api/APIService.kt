@@ -14,9 +14,7 @@ import retrofit2.http.Path
 
 interface APIService {
     @GET("users/{username}")
-    fun getMainData(
-        @Path("username") username:String
-    ): Observable<MainDataDao>
+    fun getMainData(@Path("username") username:String): Observable<MainDataDao>
 
     @GET("https://api.github.com/users/{username}/repos")
     fun getReposData(
